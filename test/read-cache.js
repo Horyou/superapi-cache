@@ -15,10 +15,20 @@ test('readCache closure', t => {
 })
 
 test('readCache closure is a promise', t => {
-  const closure = readCache({})
+  return new Promise(resolve => {
+    const closure = readCache({})
 
-  t.ok(closure() instanceof Promise, 'reading from cache should return a promise')
-  t.end()
+    const p = closure()
+      .catch(function (err) {
+        // it should throw as this test is only meant to test the closure is returning a Promise
+        if (err.reason !== 'cache-miss') {
+          throw new Error('Behavior not expected')
+        }
+      })
+
+    t.ok(p instanceof Promise, 'reading from cache should return a promise')
+    resolve()
+  })
 })
 
 test('readCache cache success', t => {
