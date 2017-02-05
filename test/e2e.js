@@ -69,8 +69,8 @@ test('miss from cache', t => {
     return superapiCache(options)(req, next, {})
       .then(res => {
         t.ok(fetchNetwork.called, 'should fetch response from network')
-        t.equal(fixtures.data.body.status, res.status, 'should retrieve the same status from cache')
-        t.equal(fixtures.data.body.responseText, res.responseText, 'should retrieve the same responseText from cache')
+        t.equal(fixtures.data.body.status, res.status, 'should retrieve the same status from network')
+        t.equal(fixtures.data.body.responseText, res.responseText, 'should retrieve the same responseText from network')
 
         req.response.restore()
         resolve()
