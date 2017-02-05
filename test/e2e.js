@@ -13,7 +13,7 @@ import serialize from '../lib/serialize'
 
 import Request from './helpers/req'
 
-test.skip('hit from cache', t => {
+test('hit from cache', t => {
   return new Promise((resolve) => {
     const fixtures = require('./fixtures/hello')
     const store = new MemoryStore()
@@ -22,7 +22,8 @@ test.skip('hit from cache', t => {
 
     const options = {
       store: store,
-      log: log
+      log: log,
+      wrappedData: false
     }
 
     const next = spy(() => {
@@ -52,7 +53,8 @@ test('miss from cache', t => {
   return new Promise(resolve => {
     const fixtures = require('./fixtures/hello')
     const options = {
-      store: new MemoryStore()
+      store: new MemoryStore(),
+      wrappedData: false
     }
 
     const req = new Request()
@@ -91,7 +93,8 @@ test('fetch network', t => {
 
     const options = {
       store: store,
-      serialize: _serialize
+      serialize: _serialize,
+      wrappedData: false
     }
 
     const req = new Request()
