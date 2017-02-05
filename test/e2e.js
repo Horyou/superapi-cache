@@ -117,7 +117,7 @@ test('fetch network', t => {
             t.equal(value.data.body.responseText, res.responseText, 'it should have the same responseText from network')
             const type = res.getResponseHeader('content-type')
 
-            t.equal(value.headers['content-type'], type, 'it should have the same responseText from network')
+            t.equal(type, 'type/text', 'it should have the same content type from network')
 
             req.response.restore()
             resolve()
