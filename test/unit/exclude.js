@@ -1,6 +1,6 @@
 'use strict'
 
-import exclude from '../lib/exclude.js'
+import exclude from '../../lib/exclude.js'
 
 import test from 'blue-tape'
 

@@ -1,8 +1,8 @@
 'use strict'
 
-import readCache from '../lib/read-cache'
+import readCache from '../../lib/read-cache'
 import test from 'blue-tape'
-import Request from './helpers/req'
+import Request from '../helpers/req'
 import debug from 'debug'
 
 const log = debug('readCache')

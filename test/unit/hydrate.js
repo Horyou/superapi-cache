@@ -1,6 +1,6 @@
 'use strict'
 
-import hydrate from '../lib/hydrate.js'
+import hydrate from '../../lib/hydrate.js'
 import test from 'tape'
 
 test('hydrate response body', t => {

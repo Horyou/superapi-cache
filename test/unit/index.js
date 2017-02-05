@@ -1,9 +1,9 @@
 'use strict'
 
-import superapiCache from '../lib/index.js'
-import memoryStore from '../lib/memory.js'
-import readCache from '../lib/read-cache'
-import serialize from '../lib/serialize'
+import superapiCache from '../../lib/index.js'
+import memoryStore from '../../lib/memory.js'
+import readCache from '../../lib/read-cache'
+import serialize from '../../lib/serialize'
 
 import test from 'blue-tape'
 
